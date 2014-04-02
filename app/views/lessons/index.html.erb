@@ -1,0 +1,31 @@
+<h1>Lessons</h1>
+
+<ul>
+  <% @lessons.each do |lesson| %>
+    <li><a href="/lessons/<%= lesson.number %>"><%= lesson.name %></a></li>
+  <% end %>
+</ul>
+
+<h2>New Lesson</h2>
+
+<% if @lesson.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @lesson.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/lessons" method="post">
+  <label for="lesson_number">Number</label>
+  <input id="lesson_number" name="number" type="number" value="<%= @lesson.number %>" maxlength="4">
+  <label for="lesson_name">Name</label>
+  <input id="lesson_name" name="name" type="text" value="<%= @lesson.name %>" size="30">
+  </br>
+  <label for="lesson_content">Content</label>
+  </br>
+  <textarea rows="8" cols="50" id="lesson_content" name="content" value="<%= @lesson.content %>"></textarea>
+  </br>
+  <button>Create lesson</button>
+</form>

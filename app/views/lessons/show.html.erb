@@ -1,0 +1,11 @@
+<h1><%= "#{@lesson.number}. #{@lesson.name}" %></h1>
+
+<p><%= @lesson.content %></p>
+
+<p><a href="/lessons/<%= @lesson.number %>/edit">Edit</a></p>
+<p><a href="/lessons/<%= @lesson.number %>"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></p>
+
+<p><a href="/lessons">Return to the lessons index</a></p>
