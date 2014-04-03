@@ -1,6 +1,10 @@
 class Lesson < ActiveRecord::Base
+  belongs_to :section
   validates :name, :presence => true
-  validates :number, :presence => true
+  validates :number,
+            :presence => true,
+            :uniqueness => true
+
 
   def next
     Lesson.find_by(:number => self.number + 1)
