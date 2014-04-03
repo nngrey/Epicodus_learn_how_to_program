@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @lessons = Lesson.all
     @lesson = Lesson.find_by(:number => params[:number])
     render('lessons/show.html.erb')
   end
@@ -41,6 +42,7 @@ class LessonsController < ApplicationController
   def destroy
     @lesson = Lesson.find_by(:number => params[:number])
     @lesson.destroy
+    Lesson.number_order
     redirect_to('/lessons')
   end
 end

@@ -9,3 +9,11 @@
       rel="nofollow">Delete</a></p>
 
 <p><a href="/lessons">Return to the lessons index</a></p>
+
+<% if @lesson.number > 1 %>
+  <p><a href="/lessons/<%= @lesson.previous.number %>">Previous Lesson</a></p>
+<% end %>
+
+<% if @lesson.number < @lessons.length %>
+  <p><a href="/lessons/<%= @lesson.next.number %>">Next Lesson</a></p>
+<% end %>
