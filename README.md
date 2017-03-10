@@ -1,4 +1,4 @@
-#Rebuild this site
+#Epicodus Exercise
 
 learnhowtoprogram.com is powered by a fairly simple Rails app. Rebuild it yourself.
 
